@@ -1,0 +1,120 @@
+/* CSS Reset */
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: rgb(25,146,212);
+    --fc1: white; /* fc = Font Color */
+    --fc2: black;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 20% 80%;
+    min-height: 100vh;
+}
+
+.sidebar {
+    display: grid;
+    height: 50vh;
+    grid-template-rows: 2fr repeat(9, 1fr);
+    background: var(--bg-color);
+    color: white;
+}
+
+.sidebar > a:nth-child(7)
+{
+    margin-bottom: 3em;
+}
+
+.sidebar svg {
+    height: 2em;
+    width: 2em;
+    fill: white;
+}
+
+.sidebar a,
+.sidebar h1 {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.sidebar h1 {
+    margin-right: 100px;
+}
+
+/* Main-Content > Header */
+
+.main-content {
+    display: grid;
+    background: gray;
+    grid-template-rows: 2fr 12fr 1fr;
+    
+}
+
+header {
+    display: grid;
+}
+
+header > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+header svg,
+button svg {
+    height: 2em;
+    width: 2em;
+}
+
+header div:first-child button {
+    border: 0;
+    background-color: rgba(0,0,0,0);
+}
+
+/* Main-Content > Body */
+main {
+    display: grid;
+    grid-template-columns: 80% 1fr;
+}
+
+main > div:first-child {
+    display: grid;
+    grid-template-rows: 1fr 11fr;
+}
+
+main > div:first-child > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: auto;
+    height: 20vh;
+    gap: 20px;
+    padding: 10px
+}
+
+main > div:first-child article,
+main > div:last-child > div  {
+    background-color: var(--fc1);
+    color: var(--fc2);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+}
+
+main > div:last-child {
+    display: grid;
+    padding: 10px;
+    grid-template-rows: 1fr 5fr 1fr 5fr;
+}
+
+/* Footer */
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--fc1);
+    background: rgba(0,0,0,0.5);
+}
