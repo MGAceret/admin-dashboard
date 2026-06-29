@@ -17,6 +17,7 @@
     min-height: 100vh;
 }
 
+/* Sidebar */
 .sidebar {
     display: grid;
     height: 50vh;
@@ -48,7 +49,6 @@
 }
 
 /* Main-Content > Header */
-
 .main-content {
     display: grid;
     background: gray;
@@ -95,6 +95,17 @@ main > div:first-child > div {
     height: 20vh;
     gap: 20px;
     padding: 10px
+}
+
+main > div:first-child article div {
+    display: flex;
+    justify-content: end;
+    padding: 5px;
+}
+
+main > div:first-child article svg {
+    height: 1em;
+    width: 1em;
 }
 
 main > div:first-child article,
