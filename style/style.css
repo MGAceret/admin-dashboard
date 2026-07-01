@@ -22,8 +22,16 @@
     display: grid;
     height: 50vh;
     grid-template-rows: 2fr repeat(9, 1fr);
-    background: var(--bg-color);
     color: white;
+}
+
+.sidebar::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    background: var(--bg-color);
+    height: 100vh;
+    z-index: -1;
 }
 
 .sidebar > a:nth-child(7)
@@ -72,6 +80,15 @@ button svg {
     width: 2em;
 }
 
+header input {
+    width: 40vw;
+    height: 50%;
+    border-radius: 50px;
+    border: 0;
+    padding: 20px;
+    margin-left: -120px;
+}
+
 header div:first-child button {
     border: 0;
     background-color: rgba(0,0,0,0);
@@ -81,6 +98,10 @@ header div:first-child button {
 main {
     display: grid;
     grid-template-columns: 80% 1fr;
+}
+
+main > div {
+    padding: 10px;
 }
 
 main > div:first-child {
@@ -94,7 +115,6 @@ main > div:first-child > div {
     width: auto;
     height: 20vh;
     gap: 20px;
-    padding: 10px
 }
 
 main > div:first-child article div {
@@ -104,8 +124,8 @@ main > div:first-child article div {
 }
 
 main > div:first-child article svg {
-    height: 1em;
-    width: 1em;
+    height: 2em;
+    width: 2em;
 }
 
 main > div:first-child article,
@@ -117,7 +137,6 @@ main > div:last-child > div  {
 
 main > div:last-child {
     display: grid;
-    padding: 10px;
     grid-template-rows: 1fr 5fr 1fr 5fr;
 }
 
