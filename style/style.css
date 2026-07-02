@@ -61,11 +61,12 @@
     display: grid;
     background: gray;
     grid-template-rows: 2fr 12fr 1fr;
-    
 }
 
 header {
     display: grid;
+    background: white;
+    padding: 10px;
 }
 
 header > div {
@@ -87,11 +88,23 @@ header input {
     border: 0;
     padding: 20px;
     margin-left: -120px;
+    background-color: rgb(226,232,240);
 }
 
 header div:first-child button {
     border: 0;
     background-color: rgba(0,0,0,0);
+}
+
+header div:last-child button {
+    font-size: 1em;
+    width: 5%;
+    height: 100%;
+    border: 0;
+    border-radius: 20px;
+    background: var(--bg-color);
+    color: var(--fc1);
+    font-weight: bold;
 }
 
 /* Main-Content > Body */
@@ -117,12 +130,6 @@ main > div:first-child > div {
     gap: 20px;
 }
 
-main > div:first-child article div {
-    display: flex;
-    justify-content: end;
-    padding: 5px;
-}
-
 main > div:first-child article svg {
     height: 2em;
     width: 2em;
@@ -135,9 +142,38 @@ main > div:last-child > div  {
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
 }
 
+main > div:first-child article {
+    display: grid;
+    grid-template-columns: 1rem 1fr;
+    grid-template-rows: 1fr auto;
+    border-radius: 10px;
+}
+
+/* For the color block to take over the entire left portion of the article */
+main > div:first-child article > div:first-child {
+    background:var(--bg-color);
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1 / -1;
+    border-radius: 10px 0 0 10px;
+}
+
+main > div:first-child article > div:last-child {
+    text-align: end;
+}
+main > div:first-child article > div:nth-child(2), 
+main > div:first-child article > div:last-child {
+    padding: 10px;
+}
+
 main > div:last-child {
     display: grid;
     grid-template-rows: 1fr 5fr 1fr 5fr;
+}
+
+main >div:last-child div {
+    border-radius: 10px;
+    padding: 5px;
 }
 
 /* Footer */
