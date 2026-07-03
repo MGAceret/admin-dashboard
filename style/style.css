@@ -3,10 +3,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;;
 }
 
 :root {
-    --bg-color: rgb(25,146,212);
+    --bg-color: rgb(74,24,24);
     --fc1: white; /* fc = Font Color */
     --fc2: black;
 }
@@ -43,6 +44,7 @@
     height: 2em;
     width: 2em;
     fill: white;
+    margin-right: 10px;
 }
 
 .sidebar a,
@@ -59,8 +61,8 @@
 /* Main-Content > Header */
 .main-content {
     display: grid;
-    background: gray;
-    grid-template-rows: 2fr 12fr 1fr;
+    background: rgb(225, 231, 239);
+    grid-template-rows: 2fr minmax(0, 12) 1fr;
 }
 
 header {
@@ -69,16 +71,36 @@ header {
     padding: 10px;
 }
 
-header > div {
+header > div:first-child {
     display: flex;
     align-items: center;
     justify-content: space-around;
+}
+
+header > div:last-child {
+    display: grid;
+    grid-template-columns: auto 1fr auto auto auto;
+    align-items: center;
+    gap: 1em;
+}
+
+header > div:last-child div {
+    display: grid;
+    grid-row: auto / auto;
+}
+
+header > div:last-child div h3 {
+    font-size: 2em;
 }
 
 header svg,
 button svg {
     height: 2em;
     width: 2em;
+}
+
+header span {
+    font-weight: bold;
 }
 
 header input {
@@ -98,8 +120,8 @@ header div:first-child button {
 
 header div:last-child button {
     font-size: 1em;
-    width: 5%;
-    height: 100%;
+    width: 125px;
+    height: 50%;
     border: 0;
     border-radius: 20px;
     background: var(--bg-color);
@@ -107,10 +129,19 @@ header div:last-child button {
     font-weight: bold;
 }
 
+header div:last-child img {
+    height: 100px;
+    width: auto;
+    border-radius: 50px;
+    border: 5px solid var(--bg-color)
+}
+
 /* Main-Content > Body */
 main {
     display: grid;
     grid-template-columns: 80% 1fr;
+    min-height: 0;
+    overflow: hidden;
 }
 
 main > div {
@@ -168,12 +199,28 @@ main > div:first-child article > div:last-child {
 
 main > div:last-child {
     display: grid;
-    grid-template-rows: 1fr 5fr 1fr 5fr;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 5fr) minmax(0, 1fr) minmax(0, 5fr);
+    min-height: 0;
 }
 
-main >div:last-child div {
+main > div:last-child div {
     border-radius: 10px;
     padding: 5px;
+}
+
+main > div:last-child h1:last-of-type {
+    margin-top: 5px;
+}
+
+main > div:last-child > div:last-child > div {
+    display: grid;
+    grid-template-columns: 30% 1fr;
+}
+
+main > div:last-child > div:last-child img {
+    border-radius: 50px;
+    height: 50px;
+    width: 50px;
 }
 
 /* Footer */
